@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <table class="table">
+        <tr>
+            <th>Stock</th>
+            <th>Quantity</th>
+            <th>Type</th>
+            <th>Date</th>
+        </tr>
+
+        {% for transaction in transactions %}
+            <tr>
+                <td>{{transaction["stock"]}}</td>
+                <td>{{transaction["quantity"]}}</td>
+                <td>{{transaction["type"]}}</td>
+                <td>{{transaction["date"]}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

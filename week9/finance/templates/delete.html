@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <h3>Are you sure ?</h3>
+
+    <form action="/deleteaccept" method="post">
+        <button type="submit" class="btn btn-danger btn-lg">Yes</button>
+    </form>
+
+    <form action="/deleteregret" method="post">
+        <button type="submit" class="btn btn-secondary btn-lg">No</button>
+    </form>
+
+{% endblock %}

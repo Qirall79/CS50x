@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+
+            function part1Listener()
+                {
+                    document.querySelectorAll(".btn1").forEach((e) => {
+
+                        e.addEventListener("click", () => {
+
+                            let value = e.firstChild.nodeValue;
+
+                            let p = document.querySelector(".part1");
+
+                            if(value == "Casablanca")
+                            {
+                                e.style.backgroundColor = "green";
+
+                                p.innerHTML = "Correct";
+                                p.style.visibility = "visible";
+
+                            }
+                            else
+                            {
+                                e.style.backgroundColor = "red";
+
+                                p.innerHTML = "Incorrect";
+
+                                p.style.visibility = "visible";
+
+                            }
+                        })
+                    })
+                }
+
+            function part2Listener()
+            {
+                document.querySelector(".btn2").addEventListener("click", () =>{
+
+                    let input = document.querySelector("#answer");
+
+                    let answer = input.value;
+
+                    let p = document.querySelector(".part2");
+
+                    if(answer.toLowerCase() == "london")
+                    {
+                        input.style.color = "green";
+
+                        p.innerHTML = "Correct";
+
+                        p.style.visibility = "visible";
+                    }
+                    else
+                    {
+                        input.style.color = "red";
+
+                        p.innerHTML = "Incorrect";
+
+                        p.style.visibility = "visible";
+                    }
+                })
+            }
+
+
+            document.addEventListener("DOMContentLoaded", part1Listener);
+            document.addEventListener("DOMContentLoaded", part2Listener);
+
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is the economical capital of Morocco ?</h3>
+
+                <p style="Visibility:hidden;" class="part1"></p>
+
+                <button class="btn1">Tangier</button>
+                <button class="btn1">Fez</button>
+                <button class="btn1">Rabat</button>
+                <button class="btn1">Casablanca</button>
+                <button class="btn1">Marrakech</button>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>What is the name of my favorite city in the world ?</h3>
+
+                <p style="Visibility:hidden;" class="part2"></p>
+
+                <input type="text" id="answer">
+                <button class="btn2">Check answer</button>
+
+            </div>
+
+        </div>
+    </body>
+</html>

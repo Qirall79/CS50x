@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <b>{{ stock["name"] }}:</b> ${{ stock["price"] | usd}}
+
+{% endblock %}
